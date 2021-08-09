@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Site</title>
+        <style>
+            body{background-color:#06487d;}
+
+	    *:focus{
+		outline:none;
+	    }
+
+	    .selection{
+		background-color:#06487d;
+		height: 100%;
+		width: 150px;
+		top: 10px;
+		left: 0px
+		z-index: 1;
+		position: fixed;
+	    }
+
+	    .button{
+		background-color: #02335c;
+		border: none;
+		color: white;
+		left: 20px;
+		width: 140px;
+		padding: 15px 32px;
+		text-align: center;
+		font-size: 16px;
+		cursor: pointer;
+	    }
+
+	    .main{
+		margin-left: 160px;
+		top: 0px;
+	    }
+
+	    .faceplate{
+		border: none;
+		color: white;
+		height: 100%;
+		width: 320px;
+		top: 10px;
+		left: 980px;
+		position: fixed;
+	    }
+        </style>
+    </head>
+    
+    <body>
+	<div class="selection">
+	<button class="button" onclick="ResetPos()">Reset</button>
+	<button class="button" onclick="ValPos()">Valves</button>
+	<button class="button" onclick="PSPos()">Pr.Sw</button>
+	<button class="button" onclick="Pump1Pos()">Pump-1</button>
+	<button class="button" onclick="Pump2Pos()">Pump-2</button><br><br>
+	<!--<button class="button" onclick="CustomRot()">Rotate</button><br><br>
+	<input type="text" id="epx"></input>
+	<input type="text" id="epy"></input>
+	<input type="text" id="epz"></input>
+	<input type="text" id="tpx"></input>
+	<input type="text" id="tpy"></input>
+	<input type="text" id="tpz"></input><br>
+	<button class="button" onclick="SubmitPos()">Submit</button><br><br>
+	<br><img src="Logo.jpg" alt="Logo" width="140">-->
+
+	</div>
+        <div class="main">
+	<canvas id="gldemo" width="800" height="600"></canvas><br>
+	</div>
+
+        <div class="faceplate">
+	<h3 style="background-color: #02335c;text-align:center">FACEPLATE</h3>
+	<p id="tagNumber" style="text-align:center">Tagname</p>
+	<p>Equipment type : <lable id="EqpTyp"></lable></p>
+	<p>Service        : <lable id="Svc"></lable></p>
+	<p>Area           : <lable id="Area"></lable></p>
+	<p>Range          : <lable id="Rng"></lable></p>
+	<br><br><h3 style="background-color: #02335c;text-align:center">TREND</h3>
+	<p id="tagNumber1" style="text-align:center">Tagname</p>
+	<p>Range: 0% - 100%</p>
+	<canvas id="MyCanvas" width="300px" height="120px" style="border:0px solid #d3d3d3; background:#02335c;">My canvas</canvas>
+	<p>Current value  : <lable id="CurVal"></lable></p>
+	</div>
+
+        <!--<script src="Buffer.js"></script>-->
+	<script src="https://seshatestsite.000webhostapp.com/Scripts/Buffer_Compressor.js"></script>
+	<script src="Cam.js"></script>
+        <script src="Anim.js"></script>
+        <script src="Trend.js"></script>    
+        <script src="gl-matrix.js"></script>
+        <script src="gl-cube.js"></script>
+
+	<script>
+		/*var elem = document.documentElement;
+		if(elem.requestFullScreen){elem.requestFullScreen();}
+		if(elem.msRequestFullscreen){elem.msRequestFullscreen();}//alert("Fullscreen");}
+		if(elem.mozRequestFullScreen){elem.mozRequestFullScreen();}
+		if(elem.webkitRequestFullScreen){elem.webkitRequestFullScreen();}*/
+	</script>
+    </body>
+</html>
